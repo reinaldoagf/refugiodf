@@ -12,5 +12,5 @@ class Pet(models.Model):
 	sex = models.CharField(max_length=10) #sexo
 	aproximatedAge = models.IntegerField() #edad aproximada
 	rescueDate = models.DateField() #fecha de rescate
-	people = models.ForeignKey(People, null=True, blank=True, on_delete=models.CASCADE)
-	vaccine = models.ManyToManyField(Vaccine, blank=True)
+	people = models.ForeignKey(People, null=True, blank=True, on_delete=models.CASCADE) #persona adoptiva
+	vaccine = models.ManyToManyField(Vaccine, blank=True) #vacuna
