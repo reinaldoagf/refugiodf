@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'apps.adoption',
+    'apps.pet',
+    'apps.user',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -55,7 +58,7 @@ ROOT_URLCONF = 'refugiodf.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,11 +79,14 @@ WSGI_APPLICATION = 'refugiodf.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql', 
+        'NAME': 'refugiodf', 
+        'USER': 'root', 
+        'PASSWORD': '', 
+        'HOST': 'localhost', # Or an IP Address that your DB is hosted on 'PORT': '3306',﻿
+        'PORT': 3306
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
