@@ -17,8 +17,8 @@ from django.conf.urls import url,include
 from django.contrib import admin
 from refugiodf.views import index
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^mascota/', include('apps.pet.urls', namespace='pet')),
-    url(r'^solicitud/', include('apps.adoption.urls',namespace="request")),
-    url(r'^', index, name='indexPage'),
+    url(r'^admin', admin.site.urls),
+    url(r'^mascota', include('apps.pet.urls', namespace='pet')),
+    url(r'^adopcion', include('apps.adoption.urls',namespace='request')),
+    url(r'^$', index, name='indexPage'),
 ]

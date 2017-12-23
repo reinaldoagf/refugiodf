@@ -1,5 +1,4 @@
 from django.db import models
-
 from apps.adoption.models import People
 
 
@@ -14,3 +13,9 @@ class Pet(models.Model):
 	rescueDate = models.DateField() #fecha de rescate
 	people = models.ForeignKey(People, null=True, blank=True, on_delete=models.CASCADE) #persona adoptiva
 	vaccine = models.ManyToManyField(Vaccine, blank=True) #vacuna
+	def __str__(self):
+		return '{}{}'.format(self.id,self.name)
+class Request(models.Model): #solicitud
+	people = models.ForeignKey(People, null=True, blank=True) #persona
+	idOfPets = models.ManyToManyField(Pet, blank=True) #mascotas a adoptar
+	reasons = models.TextField() #razones

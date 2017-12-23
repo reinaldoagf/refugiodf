@@ -1,6 +1,7 @@
 from django.conf.urls import url
-from apps.adoption.views import indexRequest, createRequest
+from django.core.urlresolvers import reverse_lazy
+from apps.adoption.views import requestIndex, requestCreate
 urlpatterns = [
-	url(r'', indexRequest,name='request_index'),
-    url(r'craer/', createRequest,name='request_create'),
+	url(r'^/$', requestIndex.as_view(),name='requestIndex'),
+    url(r'^/crear$', requestCreate.as_view(success_url=reverse_lazy('request:requestIndex')),name='requestCreate'),
 ]
