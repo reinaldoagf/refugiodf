@@ -6,7 +6,7 @@
 		<tr>		
 			<td>#</td>
 			<td>Persona</td>
-			<td>Cantidad de mascotas</td>
+			<td>Mascota(s) a adoptar</td>
 			<td>Motivo de adopción</td>
 			<td>Acciones</td>
 		</tr>
@@ -28,8 +28,8 @@
 			</td>
 			<td>{{ request.reasons }}</td>
 			<td>
-				 <!-- <a class="btn btn-primary" href="  url 'request:requestUpdate' pet.id " >Actualizar</a>
-				<a class="btn btn-danger" href="  url 'request:requestDelete' pet.id ">Eliminar</a>  -->
+				<a class="btn btn-primary" href=" {% url 'request:requestUpdate' request.id %}" >Actualizar</a>
+				<a class="btn btn-danger" href=" {%  url 'request:requestDelete' request.id %} ">Eliminar</a> 
 			</td>
 		</tr>
 		{% endfor %}

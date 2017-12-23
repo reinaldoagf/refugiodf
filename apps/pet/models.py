@@ -14,8 +14,8 @@ class Pet(models.Model):
 	people = models.ForeignKey(People, null=True, blank=True, on_delete=models.CASCADE) #persona adoptiva
 	vaccine = models.ManyToManyField(Vaccine, blank=True) #vacuna
 	def __str__(self):
-		return '{}{}'.format(self.id,self.name)
+		return '{} {}'.format(self.id,self.name)
 class Request(models.Model): #solicitud
-	people = models.ForeignKey(People, null=True, blank=True) #persona
+	people = models.ForeignKey(People, null=True, blank=True, on_delete=models.CASCADE) #persona
 	idOfPets = models.ManyToManyField(Pet, blank=True) #mascotas a adoptar
 	reasons = models.TextField() #razones

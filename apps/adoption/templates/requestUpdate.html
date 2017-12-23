@@ -1,0 +1,14 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+	<h1>Actualizar solicitud de adopción</h1>
+	
+	<div class="form-group">	
+	<form method="POST">
+		{% include 'requestForm/form.html'  %}
+		<button type="submit" class="btn btn-primary">Actualizar</button>
+	</form>
+	</div>
+	
+	
+{% endblock %}

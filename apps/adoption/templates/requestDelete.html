@@ -1,0 +1,13 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<h1>Eliminar solicitud</h1>	
+	<div class="form-group">	
+	<form method="POST">
+		{% csrf_token %}
+		<h3>¿Desea eliminar la solicitud de adopción número {{ object.id }}?</h3>
+		<button type="submit" class="btn btn-danger">Eliminar</button>
+		<a href="{% url 'request:requestIndex' %}" class="btn btn-primary">Cancelar</a>
+	</form>
+	</div>
+{% endblock %}
