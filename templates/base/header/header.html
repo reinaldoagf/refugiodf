@@ -16,6 +16,16 @@
       <ul class="nav navbar-nav">
         </li>
         <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuarios <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <!-- <li><a href=" url 'user:userIndex' ">Listar</a></li> -->
+            <li><a href="{% url 'user:userCreate' %}">Registrar</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav">
+        </li>
+        <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mascotas <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="{% url 'pet:petIndex' %}">Listar</a></li>

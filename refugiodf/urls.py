@@ -20,5 +20,6 @@ urlpatterns = [
     url(r'^admin', admin.site.urls),
     url(r'^mascota', include('apps.pet.urls', namespace='pet')),
     url(r'^adopcion', include('apps.adoption.urls',namespace='request')),
+    url(r'^usuario', include('apps.user.urls',namespace='user')),
     url(r'^$', index, name='indexPage'),
 ]
