@@ -9,4 +9,6 @@ class userCreate(CreateView):
 	model= User
 	template_name= 'userCreate.html'
 	form_class= registerForm
-		
+# def userLogin(request):
+# 	form=UserCreationForm()
+# 	return render(request, 'userLogin.html',{'form':form})
