@@ -1,7 +1,12 @@
 from django.shortcuts import render,redirect
+from django.http import HttpResponse
+from django.core import serializers
 from apps.pet.forms import PetForm
 from apps.pet.models import Pet
 # Create your views here.
+def listView(request):
+	petList=serializers.serialize('json',Pet.objects.all())
+	return HttpResponse(petList, content_type='application/json')
 def petIndex(request):
 	pet=Pet.objects.all().order_by('id')
 	context={'pets':pet}
