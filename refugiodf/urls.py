@@ -16,13 +16,14 @@ Including another URLconf
 from django.conf.urls import url,include
 from django.contrib import admin
 from refugiodf.views import index
-from django.contrib.auth.views import password_reset , password_reset_done ,password_reset_confirm,password_reset_complete
-urlpatterns = [
+from django.contrib.auth.views import login, logout_then_login,password_reset , password_reset_done ,password_reset_confirm,password_reset_complete
+urlpatterns = [    
     url(r'^admin', admin.site.urls),
     url(r'^mascota', include('apps.pet.urls', namespace='pet')),
     url(r'^adopcion', include('apps.adoption.urls',namespace='request')),
     url(r'^usuario', include('apps.user.urls',namespace='user')),
-    url(r'^/$', index, name='indexPage'),
+    url(r'^accounts/login/$', login,{'template_name':'userLogin.html'}, name='indexPage'),
+    url(r'^logout/', logout_then_login, name='logout'),
     url(r'^reset/password_reset', password_reset,{'template_name':'registration/password_reset_form.html','email_template_name':'registration/password_reset_email.html'},
         name='password_reset'),
     url(r'^reset/password_reset_done',password_reset_done,{'template_name':'registration/password_reset_done.html'},

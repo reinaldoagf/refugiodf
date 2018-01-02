@@ -1,8 +1,10 @@
 from django.conf.urls import url
+
+from django.contrib.auth.decorators import login_required
 from apps.pet.views import petIndex, petCreate, petUpdate, petDelete
 urlpatterns = [	
-    url(r'^/crear$', petCreate,name='petCreate'),	
-    url(r'^/editar/(?P<id>\d+)$', petUpdate,name='petUpdate'),
-    url(r'^/eliminar/(?P<id>\d+)$', petDelete,name='petDelete'),
-    url(r'^/$', petIndex,name='petIndex'),
+    url(r'^/crear$', login_required(petCreate),name='petCreate'),	
+    url(r'^/editar/(?P<id>\d+)$', login_required(petUpdate),name='petUpdate'),
+    url(r'^/eliminar/(?P<id>\d+)$', login_required(petDelete),name='petDelete'),
+    url(r'^/$', login_required(petIndex),name='petIndex'),
 ]
