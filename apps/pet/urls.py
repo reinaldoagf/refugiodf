@@ -6,6 +6,6 @@ urlpatterns = [
     url(r'^/crear$', login_required(petCreate),name='petCreate'),	
     url(r'^/editar/(?P<id>\d+)$', login_required(petUpdate),name='petUpdate'),
     url(r'^/eliminar/(?P<id>\d+)$', login_required(petDelete),name='petDelete'),
-    url(r'^/$', login_required(petIndex),name='petIndex'),
+    url(r'^/', login_required(petIndex),name='petIndex'),
     url(r'/listado',listView,name='list')
 ]

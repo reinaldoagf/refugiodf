@@ -44,19 +44,21 @@
 		<h1>No hay registros de mascotas</h1>
 		{% endif %}
 	</tbody>
-</table> 
-<!-- <ul class="pager">
-	<li>
-		{% if page_obj.has_previous %}
-       	 <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
-		{% endif %}
-        </li>
-	<li>
-		{% if page_obj.has_next %}
-     	 <a href="?page={{ page_obj.next_page_number }}">Next</a> 
-    	{% endif %}
-    </li>
-</ul> -->
 	
+</table> 
+<ul class="pager">
+	<li>
+		{% if pets.has_previous %}
+            <a href="?page={{ pets.previous_page_number }}">previous</a>
+        {% endif %}
+    </li>
+    <a href="?page={{ pets.paginator.num_pages }}">{{ pets.paginator.num_pages }}</a>
+        
+	<li>
+		 {% if pets.has_next %}
+            <a href="?page={{ pets.next_page_number }}">next</a>
+        {% endif %}
+    </li>
+</ul> 
 	
 {% endblock %}

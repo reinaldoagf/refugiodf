@@ -9,6 +9,7 @@ from django.http import HttpResponse
 
 class requestIndex(ListView):
 	model= Request
+	paginate_by=5
 	#Probando filtrado de queryset
 	#queryset= Request.objects.filter(people__name='oriana')
 	#queryset= Request.objects.filter(idOfPets=2)
