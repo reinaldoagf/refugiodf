@@ -130,7 +130,7 @@ STATIC_ROOT = 'staticfiles'
 STATICFILES_DIRS =(os.path.join(BASE_DIR, 'static'),) 
 
 #Redireccion despues del login y logout
-LOGIN_REDIRECT_URL=reverse_lazy('indexPage')
+LOGIN_REDIRECT_URL=reverse_lazy('pet:petIndex')
 LOGOUT_REDIRECT_URL=reverse_lazy('indexPage')
 #Configurando envio de correos para recuperar contraseñas
 EMAIL_USE_TLS = True
